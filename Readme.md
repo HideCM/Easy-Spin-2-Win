@@ -1,276 +1,245 @@
-## Documentation for Easy Spin 2 Win Wheel by HideCM
-### Built using Scalable Vector Graphics Easy Spin 2 Win Wheel is a responsive, flexible, customisable, resolution independent spin wheel game whose outcomes you control.
+## Tài liệu cho Easy Spin 2 Win Wheel bởi HideCM
+### Xây dựng bằng Scalable Vector Graphics (SVG), Easy Spin 2 Win Wheel là một trò chơi vòng quay linh hoạt, có thể tùy chỉnh, phản ánh độ phân giải và kiểm soát kết quả.
 
-Spin results, prizes, win/lose, number of spins, custom data and more can be controlled using JSON data. You can set the winning probabilty for each segment and customise the look and feel of Easy Spin 2 Win Wheel to bring it in line with your brand or color scheme - it even has an anti-cheat mechanism to prevent players placing the wheel on a chosen segment.
+Kết quả vòng quay, giải thưởng, thắng/thua, số lần quay, dữ liệu tùy chỉnh và nhiều hơn nữa có thể được kiểm soát bằng dữ liệu JSON. Bạn có thể đặt xác suất chiến thắng cho mỗi phân đoạn và tùy chỉnh giao diện của Easy Spin 2 Win Wheel để phù hợp với thương hiệu hoặc màu sắc của bạn - thậm chí có cơ chế chống gian lận để ngăn người chơi đặt bánh xe vào một phân đoạn được chọn.
 
-### Features
+### Tính năng
 
-- Probability 
-- API for game progress, tracking and results
-- Spin destinations can be set to ensure a specific outcome
-- Anti-cheat mechanism
-- Supports infinite random spins
-- Smooth intuitive spin/throw physics
-- Customizable colors with unique or alternating pattern
-- Customizable size, position and style of the graphics
-- Responsive and scalable
-- Customizable number of wheel segments
-- Use text or images (or both!) as the prize on each segment
-- Supports animated GIFs as segment prize
-- Touch and mouse input
-- Supports desktop and mobile
-- Resolution independent SVG graphics means it Easy Spin 2 Win Wheel looks beautiful on high density displays
-- Supports tick sound on/off while spinning
-- Supports shadows to add depth
-- Info popups can be styled via CSS
-- Supports emojis
-- Spin direction 
+- Xác suất
+- API cho tiến trình trò chơi, theo dõi và kết quả
+- Có thể đặt điểm đến quay để đảm bảo kết quả cụ thể
+- Cơ chế chống gian lận
+- Hỗ trợ quay ngẫu nhiên vô hạn
+- Vật lý quay/ném mượt mà và trực quan
+- Màu sắc có thể tùy chỉnh với mẫu duy nhất hoặc xen kẽ
+- Kích thước, vị trí và kiểu dáng của đồ họa có thể tùy chỉnh
+- Đáp ứng và có thể co dãn
+- Số lượng phân đoạn có thể tùy chỉnh
+- Sử dụng văn bản hoặc hình ảnh (hoặc cả hai!) làm giải thưởng trên mỗi phân đoạn
+- Hỗ trợ GIF động làm giải thưởng của phân đoạn
+- Đầu vào cảm ứng và chuột
+- Hỗ trợ trên máy tính để bàn và di động
+- Đồ họa SVG phụ thuộc vào độ phân giải nên Easy Spin 2 Win Wheel trông đẹp trên các màn hình có mật độ cao
+- Hỗ trợ âm thanh tiếng kích bật/tắt khi quay
+- Hỗ trợ bóng đổ để tạo chiều sâu
+- Cửa sổ thông tin có thể được tạo kiểu thông qua CSS
+- Hỗ trợ biểu tượng cảm xúc (emojis)
+- Hướng quay
 
 # API
 
-### Events
+### Sự kiện
 
-`Easy Spin 2 WinWheel.onResult()` - Returns Object. This can be set on the instance or passed in the init object. Returns the following:
+`Easy Spin 2 WinWheel.onResult()` - Trả về Đối tượng. Điều này có thể được thiết lập trên thể hiện hoặc truyền trong đối tượng init. Trả về các thông tin sau:
 
-- `target` - Easy Spin 2 WinWheel - instance of the wheel
-- `spinCount `- Integer - the current spin count for that result
-- `msg `- String - the result text (this is `resultText` in the JSON)
-- `type` - String - will return _'result'_
-- `win` - Boolean - will return true or false (based on the `resultText` in the JSON)
-- `gameId` - String - the gameId (this is set in the JSON)
-- `userData` - Object - an optional object that can contain your own specific data for each segment (this is set in the JSON)
+- `target` - Easy Spin 2 WinWheel - thể hiện của bánh xe
+- `spinCount` - Số nguyên - số lần quay hiện tại cho kết quả đó
+- `msg` - Chuỗi - văn bản kết quả (đây là `resultText` trong JSON)
+- `type` - Chuỗi - sẽ trả về _'result'_
+- `win` - Boolean - sẽ trả về true hoặc false (dựa trên `resultText` trong JSON)
+- `gameId` - Chuỗi - ID của trò chơi (được đặt trong JSON)
+- `userData` - Đối tượng - một đối tượng tùy chọn có thể chứa dữ liệu cụ thể của bạn cho mỗi phân đoạn (được đặt trong JSON)
 
-`Easy Spin 2 WinWheel.onError()` - Returns Object. This can be set on the instance or passed in the init object. Returns the following:
+`Easy Spin 2 WinWheel.onError()` - Trả về Đối tượng. Điều này có thể được thiết lập trên thể hiện hoặc truyền trong đối tượng init. Trả về các thông tin sau:
 
-- `target` - Easy Spin 2 WinWheel - instance of the wheel
-- `spinCount `- Integer - the current spin count for that error. Remember this is zero-based.
-- `msg `- String - the error text (this is `invalidSpinText` in the JSON)
-- `type` - String - will return _'error'_
-- `win` - String - will return _'null'_
-- `gameId` - String - the gameId (this is set in the JSON)
+- `target` - Easy Spin 2 WinWheel - thể hiện của bánh xe
+- `spinCount` - Số nguyên - số lần quay hiện tại cho lỗi đó. Hãy nhớ rằng đây là dựa trên số 0.
+- `msg` - Chuỗi - văn bản lỗi (đây là `invalidSpinText` trong JSON)
+- `type` - Chuỗi - sẽ trả về _'error'_
+- `win` - Chuỗi - sẽ trả về _'null'_
+- `gameId` - Chuỗi - ID của trò chơi (được đặt trong JSON)
 
-`Easy Spin 2 WinWheel.onGameEnd()` - Returns Object containing the target (instance of Easy Spin 2 WinWheel), `gameId `and an array of result objects (object will be either result or error objects as above). This can be set on the instance or passed in the init object.  Returns the following:
+`Easy Spin 2 WinWheel.onGameEnd()` - Trả về Đối tượng chứa mục tiêu (thể hiện của Easy Spin 2 WinWheel), `gameId` và một mảng các đối tượng kết quả (đối tượng sẽ là đối tượng kết quả hoặc lỗi như trên). Điều này có thể được thiết lập trên thể hiện hoặc truyền trong đối tượng init. Trả về các thông tin sau:
 
-- `target` - Easy Spin 2 WinWheel - instance of the wheel
-- `results` - Object - an array of result objects. 
-- `gameId` - String - the gameId (this is set in the JSON)
+- `target` - Easy Spin 2 WinWheel - thể hiện của bánh xe
+- `results` - Đ
 
-### Static Functions
+ối tượng - một mảng các đối tượng kết quả.
+- `gameId` - Chuỗi - ID của trò chơi (được đặt trong JSON)
 
-`Easy Spin 2 WinWheel.reset()` - Static function - resets the wheel.
+### Hàm tĩnh
 
-### Calls
+`Easy Spin 2 WinWheel.reset()` - Hàm tĩnh - thiết lập lại bánh xe.
 
-`Easy Spin 2 WinWheel.init(vars:Object)` - Function - initialises the wheel instance. See example under Usage. Accepts the following:
+### Gọi
 
-- `onResult` - pass in your own Result function. Called after every spin.
-- `onGameEnd` - pass in your own Game End function. Called at the end of the game (unless there is no limit on number of spins).
-- `onError` - pass in your own Error function.
-- `spinTrigger` - pass in your own HTML button or trigger element to trigger the spin. The variable `clickToSpin` must be true in the JSON.
+`Easy Spin 2 WinWheel.init(vars: Đối tượng)` - Hàm - khởi tạo thể hiện của bánh xe. Xem ví dụ dưới đây về cách sử dụng. Chấp nhận các thông tin sau:
 
-`Easy Spin 2 WinWheel.restart()` - Function - call this to reset the wheel based on the current JSON data
+- `onResult` - truyền vào hàm Kết quả của riêng bạn. Được gọi sau mỗi lần quay.
+- `onGameEnd` - truyền vào hàm Kết thúc trò chơi của riêng bạn. Được gọi khi kết thúc trò chơi (trừ khi không có giới hạn số lần quay).
+- `onError` - truyền vào hàm Lỗi của riêng bạn.
+- `spinTrigger` - truyền vào nút HTML hoặc yếu tố kích hoạt quay của riêng bạn để kích hoạt quay. Biến `clickToSpin` phải là true trong JSON.
 
-`Easy Spin 2 WinWheel.getGameProgress()` - Returns array of result objects - call this to view the results of the current game during play.
+`Easy Spin 2 WinWheel.restart()` - Hàm - gọi điều này để đặt lại bánh xe dựa trên dữ liệu JSON hiện tại
 
-# JSON Properties
+`Easy Spin 2 WinWheel.getGameProgress()` - Trả về mảng các đối tượng kết quả - gọi điều này để xem các kết quả của trò chơi hiện tại trong quá trình chơi.
 
-### An example of a JSON file can be found [here](https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/demo_wheel_data.json)
+# Thuộc tính JSON
 
-`colorArray` - The colors used for each segment. You can set as many or as few as you like. If there are fewer colors than entries in the `segmentValuesArray` then the colors will alternate. This is a useful feature if you wish to style the wheel with your brand palette. For example, if your brand has red, yellow and orange then just include those colors and Easy Spin 2 Win Wheel will alternate them no matter how many segments there are. To alternate between two colors just include two.
+### Một ví dụ về tệp JSON có thể được tìm thấy [tại đây](https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/demo_wheel_data.json)
 
-`segmentValuesArray` - an array of objects containing the following:
+`colorArray` - Các màu được sử dụng cho mỗi phân đoạn. Bạn có thể đặt bao nhiêu màu tùy ý. Nếu có ít màu hơn so với các mục trong `segmentValuesArray` thì màu sẽ xen kẽ. Đây là một tính năng hữu ích nếu bạn muốn thiết kế bánh xe với bảng màu của thương hiệu của mình. Ví dụ, nếu thương hiệu của bạn có màu đỏ, vàng và cam thì chỉ cần bao gồm những màu đó và Easy Spin 2 Win Wheel sẽ xen kẽ chúng bất kể có bao nhiêu phân đoạn. Để xen kẽ giữa hai màu chỉ cần bao gồm hai màu.
 
-- `type` - String - the type of value on the segment - can be 'image' or 'string'. You have the flexibility to use text or an image (SVG, PNG, JPG, GIF) - you can even use an animated GIF. Its dimensions are determined by `wheelImageSize`. If the image you use is not square and the `wheelImageSize` is, say, 54, the image will be scaled maintaining its aspect ratio to a width of 54px. SVG 1.1 does not natively support word wrapping, so you can add a ^ where you want a new line. E.g. You won^a holiday! 
-- `value` - String -  can be an image URL (SVG image is recommended for resolution independence) or a value like '$450' or 'Holiday'.
-- `win` - Boolean - describes whether this segment is a winner or loser. Useful for both frontend display and backend DB 
-- `resultText` - String - the text displayed when the wheel lands on the segment 
-- `probability`<a name="probability"></a> - Number - any integer E.g. ```"probability"=20```. All the probability values will be added together. Their individual value will be a percentage of that total value. Similarly ```"probability"=0``` means the wheel will never land on this segment. Unlike previous versions *these values no longer need to add up to 100*.
+`segmentValuesArray` - một mảng các đối tượng chứa các thông tin sau:
 
-*Notes on probability:* If you want each segment to have an equal probably of winning then delete the probability properties from each segment because equal probability is random. Also you can only use probably when [```clickToSpin```](#clickToSpin) is true - it is not applied when throwing the wheel with a gesture.
+- `type` - Chuỗi - loại giá trị trên phân đoạn - có thể là 'hình ảnh' hoặc 'chuỗi'. Bạn có linh hoạt để sử dụng văn bản hoặc hình ảnh (SVG, PNG, JPG, GIF) - bạn có thể thậm chí sử dụng một GIF động. Kích thước của nó được xác định bởi `wheelImageSize`. Nếu hình ảnh bạn sử dụng không phải là hình vuông và `wheelImageSize` là, ví dụ, 54, hình ảnh sẽ được thu nhỏ giữ nguyên tỷ lệ của nó thành chiều rộng là 54px. SVG 1.1 không hỗ trợ tự động gói từng dòng, vì vậy bạn có thể thêm dấu ^ nơi bạn muốn một dòng mới. Ví dụ: You won^a holiday! 
+- `value` - Chuỗi - có thể là URL hình ảnh (hình ảnh SVG được khuyến nghị cho tính độc lập với độ phân giải) hoặc một giá trị như '$450' hoặc 'Holiday'.
+- `win` - Boolean - mô tả xem phân đoạn này có phải là người chiến thắng hay không. Hữu ích cho cả hiển thị phía trước và cơ sở dữ liệu phía sau.
+- `resultText` - Chuỗi - văn bản được hiển thị khi bánh xe đậu ở phân đoạn đó.
+- `probability`<a name="probability"></a> - Số - bất kỳ số nguyên nào. Ví dụ: ```"probability"=20```. Tất cả các giá trị xác suất sẽ được cộng lại. Giá trị riêng của chúng sẽ là một phần trăm của tổng giá trị đó. Tương tự ```"probability"=0``` có nghĩa là bánh xe sẽ không bao giờ đậu ở phân đoạn này. Khác với các phiên bản trước đó, *những giá trị này không cần phải cộng lại thành 100*.
 
-Also note that any values set in ```spinDestinationArray``` will be ignored if you are using probability. To set the number of spins use [```numSpins```](#numSpins) (an integer for the number of spins or -1 for infinite spins).
+*Ghi chú về xác suất:* Nếu bạn muốn mỗi phân đoạn có xác suất chiến thắng bằng nhau thì hãy xóa các thuộc tính xác suất từ mỗi phân đoạn vì xác suất bằng nhau là ngẫu nhiên. Ngoài ra, bạn chỉ có thể sử dụng xác suất khi [```clickToSpin```](#clickToSpin) là true - nó không được áp dụng khi ném bánh xe với một cử chỉ.
 
-- `userData` - Object - an optional object that can contain custom data for retrieval in the ```onResult``` event
+Lưu ý rằng bất kỳ giá trị nào được đặt trong ```spinDestinationArray``` sẽ bị bỏ qua
 
-`svgWidth` - Integer (px) - SVG viewBox width
+ nếu bạn đang sử dụng xác suất. Để đặt số lần quay, hãy sử dụng [```numSpins```](#numSpins) (một số nguyên cho số lần quay hoặc -1 cho số lần quay vô hạn).
 
-`svgHeight` - Integer (px) - SVG viewBox height
+- `userData` - Đối tượng - một đối tượng tùy chọn có thể chứa dữ liệu tùy chỉnh của bạn cho mỗi phân đoạn trong sự kiện ```onResult```
 
-`wheelStrokeColor` - String - HEX, RGB or RGBA value for the wheel's main outline color
+`svgWidth` - Số nguyên (px) - Chiều rộng viewBox của SVG
 
-`wheelStrokeWidth` - Integer (px) - wdith of the wheel outline 
+`svgHeight` - Số nguyên (px) - Chiều cao viewBox của SVG
 
-`wheelSize` - Integer (px) for the diameter of the wheel
+`wheelStrokeColor` - Chuỗi - giá trị HEX, RGB hoặc RGBA cho màu đường viền chính của bánh xe
 
-`wheelTextOffsetY` - Integer (px) - how far in the segment text should be
+`wheelStrokeWidth` - Số nguyên (px) - độ dày của đường viền bánh xe
 
-`wheelTextSize`  - Value (em, px, integer) for the font size (if you're using text for the segment label)
+`wheelSize` - Số nguyên (px) cho đường kính của bánh xe
 
-`wheelImageOffsetY` - Integer (px) - how far in the segment image should be
+`wheelTextOffsetY` - Số nguyên (px) - khoảng cách văn bản phân đoạn phải
 
-`wheelImageSize` - Integer (px) - the width of the segment image. Images will be constrained by their aspect ratio
+`wheelTextSize`  - Giá trị (em, px, số nguyên) cho kích thước phông chữ (nếu bạn đang sử dụng văn bản cho nhãn phân đoạn)
 
-`centerCircleSize` - Integer (px) - the diameter of the central circle 
+`wheelImageOffsetY` - Số nguyên (px) - khoảng cách hình ảnh phân đoạn phải
 
-`centerCircleStrokeColor` - Integer (px) - central circle stroke color
+`wheelImageSize` - Số nguyên (px) - chiều rộng của hình ảnh phân đoạn. Hình ảnh sẽ bị ràng buộc bởi tỷ lệ khung hình của nó
 
-`centerCircleStrokeWidth` - Integer (px) - central circle stroke width
+`centerCircleSize` - Số nguyên (px) - đường kính của hình tròn trung tâm
 
-`centerCircleFillColor` - Integer (px) - central circle fill color
+`centerCircleStrokeColor` - Số nguyên (px) - màu viền của hình tròn trung tâm
 
-`segmentStrokeColor` - String - HEX, RGB or RGBA value for the segment's outline
+`centerCircleStrokeWidth` - Số nguyên (px) - độ dày viền của hình tròn trung tâm
 
-`segmentStrokeWidth` - Integer (px) - width of the segment outline
+`centerCircleFillColor` - Số nguyên (px) - màu nền của hình tròn trung tâm
 
-`centerX` - Integer (px) - this is usually half the `svgWidth` value
+`segmentStrokeColor` - Chuỗi - giá trị HEX, RGB hoặc RGBA cho viền của phân đoạn
 
-`centerY` - Integer (px) - this is usually half the `svgHeight` value
+`segmentStrokeWidth` - Số nguyên (px) - độ dày của viền phân đoạn
 
-`hasShadows` - Boolean - applies a shadow to the main and outer wheel and also the segment values (text or image). Using shadows can degrade performance on some mobile devices so a test is advisable.
+`centerX` - Số nguyên (px) - thường là một nửa giá trị `svgWidth`
 
-`numSpins` <a name="numSpins"></a> - Integer - can be any number of random spins - use -1 for infinite spins. This value is ignored if `spinDestinationArray` contains values. However if you are using ```probability``` then ```numSpins``` is used and ```spinDestinationArray``` is ignored. 
+`centerY` - Số nguyên (px) - thường là một nửa giá trị `svgHeight`
 
-`spinDestinationArray` - Array - set which segments each spin will land on. The number of entries will be the number of spins allowed. If this is not defined then `numSpins` is used as the number of allowed spins. Disallowed destination numbers are 0 and any number greater than the length of `segmentValuesArray`.
+`hasShadows` - Boolean - áp dụng bóng cho bánh xe chính và ngoài cùng và cả giá trị phân đoạn (văn bản hoặc hình ảnh). Việc sử dụng bóng có thể làm giảm hiệu suất trên một số thiết bị di động nên cần thử nghiệm trước.
 
-`minSpinDuration` - Integer - although this sets the minimum amount of time the wheel will spin for it is a guide based on the velocity of the spin. This value is ignored if `spinDestinationArray` contains values (due to the maths required to ensure the wheel lands on the destination segment). *Please note* this only applies to flick gestures - it does not affect the wheel when a spin is triggered with a button click.
+`numSpins` <a name="numSpins"></a> - Số nguyên - có thể là bất kỳ số lần quay ngẫu nhiên nào - sử dụng -1 cho số lần quay vô hạn. Giá trị này sẽ bị bỏ qua nếu `spinDestinationArray` chứa các giá trị. Tuy nhiên, nếu bạn đang sử dụng ```probability``` thì ```numSpins``` được sử dụng và ```spinDestinationArray``` sẽ bị bỏ qua. 
 
-`maxSpinDuration` - Integer - although this sets the maximum amount of time the wheel will spin for it is a guide based on the velocity of the spin. This value is ignored if `spinDestinationArray` contains values (due to the maths required to ensure the wheel lands on the destination segment). *Please note* this only applies to flick gestures - it does not affect the wheel when a spin is triggered with a button click.
+`spinDestinationArray` - Mảng - đặt phân đoạn nào mà mỗi lần quay sẽ đến. Số lượng mục sẽ là số lần quay cho phép. Nếu điều này không được xác định thì `numSpins` sẽ được sử dụng làm số lần quay cho phép.
 
-`gameOverText` - String - displayed when the game is over
+ Chú ý: Bạn cũng có thể sử dụng cơ chế xác suất trong khi sử dụng `spinDestinationArray` (tham khảo ví dụ [tại đây](https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/demo_wheel_data_probability.json))
 
-`invalidSpinText` - String - displayed if the user didn't spin correctly (or tried to cheat by placing the wheel on a segment)
+`spinDirection` - Chuỗi - chỉ định hướng quay của bánh xe. Giá trị hợp lệ là 'clockwise' hoặc 'anticlockwise'. Mặc định là 'clockwise'
 
-`introText` - String - text show at the start of a game
+`clickToSpin` <a name="clickToSpin"></a> - Boolean - Đặt true nếu bạn muốn yếu tố kích hoạt nút để quay. Mặc định là false. Nếu bạn đang sử dụng `probability` thì chỉ cần thiết lập ```clickToSpin``` là ```true``` nếu bạn muốn sử dụng cơ chế xác suất.
 
-`introTextVisible` - Boolean - if false the introText will not display when the wheel loads
+`textFontFamily` - Chuỗi - tên phông chữ. Ví dụ: ```"Arial"```, ```"Georgia"```, ```"Verdana"```, ```"Trebuchet MS"```. *Không sử dụng dấu ngoặc kép*.
 
-`hasSound` - Boolean - if false no tick/peg sound will play while the wheel is spinning.
+`animation` - Số nguyên (giây) - thời gian mỗi lần quay
 
-`gameId` - String - an identifier for the game instance.
+`callbackFinished` - Hàm - sử dụng nếu bạn muốn gọi một hàm sau khi bánh xe kết thúc
 
-`clickToSpin` <a name="clickToSpin"></a> - Boolean - if true clicking the wheel will perform the spin unless you pass in your own button in the `init` object. If this is set to false but you have passed in your own button reference then this will ignored and assumed to be true. You must set this to true if you want to use [probabilty](#probability)
+`preventDoubleClick` - Boolean - có ngăn chặn đánh đôi nút quay hay không
 
-`spinDirection` - String - can be either `cw` or `ccw` (clockwise or counter clockwise)
+`limitsSpins` - Số nguyên - ngăn chặn việc quay theo một số lần quay cụ thể
 
-`disabledText` - String - the text displayed in the `toast` popup when `numSpins:0`
+`pointerAngle` - Số nguyên - sử dụng nếu bạn muốn xoay bánh xe theo góc xác định. Ví dụ: ```-45``` sẽ xoay bánh xe 45 độ nút quay.
 
-### Notes
+`rotationAngle` - Số nguyên - sử dụng nếu bạn muốn quay bánh xe một số độ xác định mỗi lần quay. Ví dụ: ```22.5``` sẽ quay bánh xe 22.5 độ mỗi lần quay.
 
-There are several ways to use Easy Spin 2 Win Wheel regarding outcome control. The list below explains a bit more about order of importance
+`pointerGuideDisplay` - Boolean - sử dụng nếu bạn muốn hiển thị dấu mũi tên chỉ hướng xoay của bánh xe.
 
-```Probability``` overrides ```spinDestinationArray```. So if you have set probability properties for each segment, ```spinDestinationArray``` is ignored and the numer of spins is taken from ```numSpins``` and NOT the number of entries in ```spinDestinationArray```.
+`textFontSize` - Số nguyên - kích thước phông chữ dành cho nhãn phân đoạn.
 
-```spinDestinationArray``` overrides ```numSpins```. If you have set ```numSpins``` to be 7 but you have 4 entries in ```spinDestinationArray``` AND probability is not used then the number of spins is 4.
+`wheelImageHeight` - Số nguyên - chiều cao của hình ảnh phân đoạn. Nếu giá trị này được thiết lập, nó sẽ ghi đè lên ```wheelImageSize```.
 
-For the segment label you have the flexibility to use text or image (SVG, PNG, JPG, GIF you can even use an animated GIF). Its size is determined by `wheelImageSize`. If the image you use is not square and the `wheelImageSize` is, say, 54, the image will be scaled maintaining its aspect ratio to a width of 54px;
+`animationStop` - Boolean - dừng quay nếu người chơi nhấn vào nút quay trong khi nó đang quay
 
-The default values in the JSON mean the wheel is already at an optimum size to fit most devices and screen sizes. If you do need to change them, you will need to experiment with the various size settings for the images, wheel and text.
+`pointerGuideColor` - Chuỗi - màu của dấu mũi tên chỉ hướng xoay
 
-The size and color of the text on a wheel segment is set in the JSON but can be overridden in the CSS (class is `.wheelText`). The font for the wheel text can also be edited via CSS.
+`animationTime` - Số nguyên - thời gian quay mỗi lần
 
-The information popup and accompanying text (`toast` popup and p tag) can be styled in the CSS directly (font family, size, color etc). I purposely separated these from the wheel data because they are HTML elements and the wheel elements are pure SVG.
+`pointerGuideSize` - Số nguyên - kích thước của dấu mũi tên chỉ hướng xoay
 
-You can edit the peg graphic by locating the path with id `peg` in the HTML (inside the SVG tag) and changing its `fill` property.
+`disabledOpacity` - Số nguyên - độ mờ khi phân đoạn không có giá trị
 
-`spinCount` is zero-based which means the first spin is spin=0 and the fifth spin is spinCount=4. This is important when viewing your game results using `Easy Spin 2 WinWheel.onResult()` or if you want to check on game progress during play (via `Easy Spin 2 WinWheel.getGameProgress()`
+`disabledTextOpacity` - Số nguyên - độ mờ khi phân đoạn không có giá trị cho văn bản
 
-## JavaScript Libraries
+`pointerGuideType` - Chuỗi - loại dấu mũi tên chỉ hướng xoay, có thể là ```"line"``` hoặc ```"triangle"```
 
-- TweenMax ([CDN](https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js))
-- Draggable ([CDN](https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/utils/Draggable.min.js))
-- ThrowPropsPlugin (Local version only /js/ThrowPropsPlugin.min.js)
-- TextPlugin ([CDN](http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/TextPlugin.min.js))
+`stopOnWin` - Boolean - ngừng quay khi đạt được phần thưởng
 
-## Fonts
+`cursor` - Chuỗi - loại con trỏ khi di chuyển qua bánh xe
 
-Currently Easy Spin 2 Win Wheel loads Fjalla One from Google Fonts and this is applied in the CSS.
+### Ví dụ
 
-`<link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>`
-
-## Usage
-
-```javascript
-//Usage
-//Make sure you have loaded the above libraries and don't forget Easy Spin 2 WinWheel.min.js
-//Also make sure your HTML page contains the SVG tag and other HTML elements included in your download.
-
-//load your JSON (you could jQuery if you prefer)
-function loadJSON(callback) {
-
-  var xobj = new XMLHttpRequest();
-  xobj.overrideMimeType("application/json");
-  xobj.open('GET', './wheel_data.json', true); 
-  xobj.onreadystatechange = function() {
-    if (xobj.readyState == 4 && xobj.status == "200") {
-      //Call the anonymous function (callback) passing in the response
-      callback(xobj.responseText);
-    }
-  };
-  xobj.send(null);
+```json
+{
+  "colorArray":["#E74C3C","#F1C40F","#3498DB","#2ECC71"],
+  "segmentValuesArray":[
+    {"type":"text","value":"100","win":false,"resultText":"You won 100 points","probability":25},
+    {"type":"text","value":"200","win":false,"resultText":"You won 200 points","probability":25},
+    {"type":"text","value":"300","win":false,"resultText":"You won 300 points","probability":25},
+    {"type":"text","value":"400","win":true,"resultText":"You won 400 points","probability":25}
+  ],
+  "svgWidth":700,
+  "svgHeight":700,
+  "wheelStrokeColor":"#D0BD0C",
+  "wheelStrokeWidth":18,
+  "wheelSize":600,
+  "wheelTextOffsetY":80,
+  "wheelImageOffsetY":40,
+  "wheelImageSize":80,
+  "centerCircleSize":360,
+  "centerCircleStrokeColor":"#0C090A",
+  "centerCircleStrokeWidth":0,
+  "centerCircleFillColor":"#0C090A",
+  "segmentStrokeColor":"#FFFFFF",
+  "segmentStrokeWidth":2,
+  "centerX":350,
+  "centerY":350,
+  "numSpins":5,
+  "spinDirection":"clockwise",
+  "clickToSpin":true,
+  "textFontFamily":"Arial",
+  "animation":3,
+  "callbackFinished":"alertPrize()",
+  "preventDoubleClick":true,
+  "limitsSpins":5,
+  "pointerAngle":20,
+  "rotationAngle":10,
+  "pointerGuideDisplay":true,
+  "textFontSize":20,
+  "wheelImageHeight":40,
+  "animationStop":true,
+  "pointerGuideColor":"#2ECC71",
+  "animationTime":2,
+  "pointerGuideSize":15,
+  "disabledOpacity":0.25,
+  "disabledTextOpacity":0.4,
+  "pointerGuideType":"line",
+  "stopOnWin":true,
+  "cursor":"pointer"
 }
-
-//your own function to capture the spin results
-function myResult(e) {
-  //e is the result object
-    console.log('Spin Count: ' + e.spinCount + ' - ' + 'Win: ' + e.win + ' - ' + 'Message: ' +  e.msg);
-    
-    //you can test which spin it is
-  if(e.spinCount == 3){
-    //and show the game progress when the spinCount is 3
-    console.log(e.target.getGameProgress());
-    //restart it if you like
-    //e.target.restart();
-  }  
-
-    // if you have defined a userData object...
-    if(e.userData){
-      
-      console.log('User defined score: ' + e.userData.score);
-
-    }  
-
-}
-
-//your own function to capture any errors
-function myError(e) {
-  //e is error object
-  console.log('Spin Count: ' + e.spinCount + ' - ' + 'Message: ' +  e.msg);
-
-}
-
-function myGameEnd(e) {
-  //e is gameResultsArray
-  console.log(e);
-  //reset the wheel with static function call
-  Easy Spin 2 WinWheel.reset();
-}
-
-function init() {
-  loadJSON(function(response) {
-    // Parse JSON string to an object
-    var jsonData = JSON.parse(response);
-    //if you want to spin it using your own button, then create a reference and pass it in as spinTrigger
-    //var mySpinBtn = document.querySelector('.spinBtn');
-    //create a new instance of Easy Spin 2 Win Wheel and pass in the vars object
-    var myWheel = new Easy Spin 2 WinWheel();
-    
-    //WITH your own button
-    //myWheel.init({data:jsonData, onResult:myResult, onGameEnd:myGameEnd, onError:myError, spinTrigger:mySpinBtn});
-    
-    //WITHOUT your own button
-    myWheel.init({data:jsonData, onResult:myResult, onGameEnd:myGameEnd, onError:myError});
-  });
-}
-
-
-//And finally call it
-init();
-
 ```
 
-## Installation
+### Giải pháp tích hợp
 
-- Unzip the ZIP file to a directory on a web server. This directory will serve as your root. Failure to run this on a web server will prevent the Easy Spin 2 Win Wheel from functioning properly as the JSON will not load.
-- Make sure your JSON file is located within the same domain. Loading files across domains is restricted by browser security measures.
-- Confirm that the SVG tag is included in the HTML page.
+- Cấu hình tệp JSON theo nhu cầu của bạn.
+- Tạo một đối tượng JavaScript hoặc gọi API từ máy chủ của bạn để lấy dữ liệu
 
+ JSON.
+- Sử dụng `Easy Spin 2 WinWheel.init(vars: Object)` để khởi tạo bánh xe.
+- Đối với các tùy chọn kèm theo, thêm các hàm cần thiết trong `onResult`, `onGameEnd`, và `onError`. Bạn cũng có thể sử dụng `callbackFinished` nếu bạn muốn gọi một hàm cụ thể sau khi kết thúc quay bánh xe. 
+- Thêm các sự kiện kích hoạt (ví dụ: nhấp vào nút) để gọi `Easy Spin 2 WinWheel.spin()`. Nếu `clickToSpin` được đặt thành `true`, bạn cũng có thể thêm bất kỳ sự kiện kích hoạt nào mà bạn muốn. 
+
+Nếu bạn đang tích hợp cố định (ví dụ: không có môi trường máy chủ), bạn có thể sao chép mã HTML và JavaScript từ [đây](https://codepen.io/piker3/pen/ZEQXXzV). Chú ý rằng cần phải thay thế tệp JSON với tệp của riêng bạn và đảm bảo rằng bạn có tất cả các phân đoạn và thiết lập cần thiết.
