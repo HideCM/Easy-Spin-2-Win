@@ -1,0 +1,193 @@
+.peg,
+.wheelSVG {
+    visibility: hidden;
+}
+
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.centerCircle,
+.valueContainer,
+.wheelOutline,
+.wheelText {
+    pointer-events: none;
+}
+
+body,
+html {
+    text-align: center;
+}
+
+
+button {
+    position: relative;
+    background-color: #E81D62;
+}
+
+body {
+    background-color: #201D51;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+	width: 100vw;
+	margin-top: 2rem;
+
+}
+
+ .wheelContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    width: 100vw
+    height: 100vh;
+
+}
+
+.wheelSVG {
+   position: relative;
+    overflow: visible;
+    height: 75vh;
+}
+
+.wheelText {
+    text-anchor: start;
+    font-family: Montserrat, sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.wheelText tspan {
+    text-anchor: middle;
+    letter-spacing: 2px;
+}
+
+.toast {
+    border-radius: 12px;
+    opacity: 0;
+    background-color: #E81D62;
+    position: absolute;
+    overflow: hidden;
+    color: #FFF;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    width: 50vw;
+    padding: 20px 40px;
+    
+    max-width: 1000px;
+}
+
+.toast p {
+    clear: both;
+    font-family: Montserrat, Arial, sand-serif;
+    margin: 23px;
+    font-size: 30px;
+    color: #ededed;
+    letter-spacing: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    line-height: 32px;
+    -webkit-transition: line-height .2s ease;
+    transition: line-height .2s ease;
+}
+
+button {
+    position: relative;
+    width: 60vw;
+    /* top: 20px; */
+    max-width: 400px;
+    padding: 20px;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #ededed;
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0 2px 0 #D71559;
+    cursor: pointer;
+    font-family: Montserrat, sans-serif;
+}
+
+@media only screen and (max-width: 480px) {
+
+ 
+    button {
+        font-size: 1rem;
+        padding: 10px;
+        width: 60vw;
+    }   
+    .toast {
+		padding: 0;
+    }
+    .toast p,
+    .toast span {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+
+    .toast {
+		padding: 0;
+    }    
+    .toast p,
+    .toast span {
+        font-size: 1.8rem;
+        line-height: 2rem;
+    }
+}
+
+@media only screen and (min-width: 801px) {
+
+    .toast p,
+    .toast span {
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+
+    .toast p,
+    .toast span {
+        font-size: 33px;
+        line-height: 35px;
+    }
+
+    button {
+        font-size: 22px;
+        padding: 10px;
+        width: 90%;
+    }
+
+  
+}
+
+button:focus {
+    outline: 0;
+}
+
+a:link { color:#F1DC16; }
+a:visited { color:#F1DC16; }
+a:hover { color:#F1DC16; }
+a:active { color:#F1DC16;}
