@@ -1,12 +1,9 @@
-###### Release notes for updates can be found [in the comments](https://gist.github.com/chrisgannon/1afba5c07faeb9947a2e84d987200e3e#gistcomment-1823757)
-###### FAQs can be found here [here](https://codecanyon.net/item/spin2win-wheel-spin-it-2-win-it/16337656/support)
+## Documentation for Easy Spin 2 Win Wheel by HideCM
+### Built using Scalable Vector Graphics Easy Spin 2 Win Wheel is a responsive, flexible, customisable, resolution independent spin wheel game whose outcomes you control.
 
-## Documentation for Spin2Win Wheel by Chris Gannon
-### Built using Scalable Vector Graphics Spin2Win Wheel is a responsive, flexible, customisable, resolution independent spin wheel game whose outcomes you control.
+Spin results, prizes, win/lose, number of spins, custom data and more can be controlled using JSON data. You can set the winning probabilty for each segment and customise the look and feel of Easy Spin 2 Win Wheel to bring it in line with your brand or color scheme - it even has an anti-cheat mechanism to prevent players placing the wheel on a chosen segment.
 
-Spin results, prizes, win/lose, number of spins, custom data and more can be controlled using JSON data. You can set the winning probabilty for each segment and customise the look and feel of Spin2Win Wheel to bring it in line with your brand or color scheme - it even has an anti-cheat mechanism to prevent players placing the wheel on a chosen segment.
-
-##### You can purchase Spin2Win Wheel by Chris Gannon from CodeCanyon [here](http://codecanyon.net/item/spin2win-wheel-spin-it-2-win-it/16337656?ref=chrisgannon)
+##### You can purchase Easy Spin 2 Win Wheel by Chris Gannon from CodeCanyon [here](http://codecanyon.net/item/Easy Spin 2 Win-wheel-spin-it-2-win-it/16337656?ref=chrisgannon)
 
 
  
@@ -27,7 +24,7 @@ Spin results, prizes, win/lose, number of spins, custom data and more can be con
 - Supports animated GIFs as segment prize
 - Touch and mouse input
 - Supports desktop and mobile
-- Resolution independent SVG graphics means it Spin2Win Wheel looks beautiful on high density displays
+- Resolution independent SVG graphics means it Easy Spin 2 Win Wheel looks beautiful on high density displays
 - Supports tick sound on/off while spinning
 - Supports shadows to add depth
 - Info popups can be styled via CSS
@@ -38,9 +35,9 @@ Spin results, prizes, win/lose, number of spins, custom data and more can be con
 
 ### Events
 
-`Spin2WinWheel.onResult()` - Returns Object. This can be set on the instance or passed in the init object. Returns the following:
+`Easy Spin 2 WinWheel.onResult()` - Returns Object. This can be set on the instance or passed in the init object. Returns the following:
 
-- `target` - Spin2WinWheel - instance of the wheel
+- `target` - Easy Spin 2 WinWheel - instance of the wheel
 - `spinCount `- Integer - the current spin count for that result
 - `msg `- String - the result text (this is `resultText` in the JSON)
 - `type` - String - will return _'result'_
@@ -48,43 +45,43 @@ Spin results, prizes, win/lose, number of spins, custom data and more can be con
 - `gameId` - String - the gameId (this is set in the JSON)
 - `userData` - Object - an optional object that can contain your own specific data for each segment (this is set in the JSON)
 
-`Spin2WinWheel.onError()` - Returns Object. This can be set on the instance or passed in the init object. Returns the following:
+`Easy Spin 2 WinWheel.onError()` - Returns Object. This can be set on the instance or passed in the init object. Returns the following:
 
-- `target` - Spin2WinWheel - instance of the wheel
+- `target` - Easy Spin 2 WinWheel - instance of the wheel
 - `spinCount `- Integer - the current spin count for that error. Remember this is zero-based.
 - `msg `- String - the error text (this is `invalidSpinText` in the JSON)
 - `type` - String - will return _'error'_
 - `win` - String - will return _'null'_
 - `gameId` - String - the gameId (this is set in the JSON)
 
-`Spin2WinWheel.onGameEnd()` - Returns Object containing the target (instance of Spin2WinWheel), `gameId `and an array of result objects (object will be either result or error objects as above). This can be set on the instance or passed in the init object.  Returns the following:
+`Easy Spin 2 WinWheel.onGameEnd()` - Returns Object containing the target (instance of Easy Spin 2 WinWheel), `gameId `and an array of result objects (object will be either result or error objects as above). This can be set on the instance or passed in the init object.  Returns the following:
 
-- `target` - Spin2WinWheel - instance of the wheel
+- `target` - Easy Spin 2 WinWheel - instance of the wheel
 - `results` - Object - an array of result objects. 
 - `gameId` - String - the gameId (this is set in the JSON)
 
 ### Static Functions
 
-`Spin2WinWheel.reset()` - Static function - resets the wheel.
+`Easy Spin 2 WinWheel.reset()` - Static function - resets the wheel.
 
 ### Calls
 
-`Spin2WinWheel.init(vars:Object)` - Function - initialises the wheel instance. See example under Usage. Accepts the following:
+`Easy Spin 2 WinWheel.init(vars:Object)` - Function - initialises the wheel instance. See example under Usage. Accepts the following:
 
 - `onResult` - pass in your own Result function. Called after every spin.
 - `onGameEnd` - pass in your own Game End function. Called at the end of the game (unless there is no limit on number of spins).
 - `onError` - pass in your own Error function.
 - `spinTrigger` - pass in your own HTML button or trigger element to trigger the spin. The variable `clickToSpin` must be true in the JSON.
 
-`Spin2WinWheel.restart()` - Function - call this to reset the wheel based on the current JSON data
+`Easy Spin 2 WinWheel.restart()` - Function - call this to reset the wheel based on the current JSON data
 
-`Spin2WinWheel.getGameProgress()` - Returns array of result objects - call this to view the results of the current game during play.
+`Easy Spin 2 WinWheel.getGameProgress()` - Returns array of result objects - call this to view the results of the current game during play.
 
 # JSON Properties
 
 ### An example of a JSON file can be found [here](https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/demo_wheel_data.json)
 
-`colorArray` - The colors used for each segment. You can set as many or as few as you like. If there are fewer colors than entries in the `segmentValuesArray` then the colors will alternate. This is a useful feature if you wish to style the wheel with your brand palette. For example, if your brand has red, yellow and orange then just include those colors and Spin2Win Wheel will alternate them no matter how many segments there are. To alternate between two colors just include two.
+`colorArray` - The colors used for each segment. You can set as many or as few as you like. If there are fewer colors than entries in the `segmentValuesArray` then the colors will alternate. This is a useful feature if you wish to style the wheel with your brand palette. For example, if your brand has red, yellow and orange then just include those colors and Easy Spin 2 Win Wheel will alternate them no matter how many segments there are. To alternate between two colors just include two.
 
 `segmentValuesArray` - an array of objects containing the following:
 
@@ -164,7 +161,7 @@ Also note that any values set in ```spinDestinationArray``` will be ignored if y
 
 ### Notes
 
-There are several ways to use Spin2Win Wheel regarding outcome control. The list below explains a bit more about order of importance
+There are several ways to use Easy Spin 2 Win Wheel regarding outcome control. The list below explains a bit more about order of importance
 
 ```Probability``` overrides ```spinDestinationArray```. So if you have set probability properties for each segment, ```spinDestinationArray``` is ignored and the numer of spins is taken from ```numSpins``` and NOT the number of entries in ```spinDestinationArray```.
 
@@ -180,11 +177,11 @@ The information popup and accompanying text (`toast` popup and p tag) can be sty
 
 You can edit the peg graphic by locating the path with id `peg` in the HTML (inside the SVG tag) and changing its `fill` property.
 
-`spinCount` is zero-based which means the first spin is spin=0 and the fifth spin is spinCount=4. This is important when viewing your game results using `Spin2WinWheel.onResult()` or if you want to check on game progress during play (via `Spin2WinWheel.getGameProgress()`
+`spinCount` is zero-based which means the first spin is spin=0 and the fifth spin is spinCount=4. This is important when viewing your game results using `Easy Spin 2 WinWheel.onResult()` or if you want to check on game progress during play (via `Easy Spin 2 WinWheel.getGameProgress()`
 
 ## JavaScript Libraries
 
-Spin2Win Wheel is powered the GreenSock Animation Platform (GSAP). The following libraries are used:
+Easy Spin 2 Win Wheel is powered the GreenSock Animation Platform (GSAP). The following libraries are used:
 
 - TweenMax ([CDN](https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js))
 - Draggable ([CDN](https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/utils/Draggable.min.js))
@@ -193,7 +190,7 @@ Spin2Win Wheel is powered the GreenSock Animation Platform (GSAP). The following
 
 ## Fonts
 
-Currently Spin2Win Wheel loads Fjalla One from Google Fonts and this is applied in the CSS.
+Currently Easy Spin 2 Win Wheel loads Fjalla One from Google Fonts and this is applied in the CSS.
 
 `<link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>`
 
@@ -201,7 +198,7 @@ Currently Spin2Win Wheel loads Fjalla One from Google Fonts and this is applied 
 
 ```javascript
 //Usage
-//Make sure you have loaded the above libraries and don't forget Spin2WinWheel.min.js
+//Make sure you have loaded the above libraries and don't forget Easy Spin 2 WinWheel.min.js
 //Also make sure your HTML page contains the SVG tag and other HTML elements included in your download.
 
 //load your JSON (you could jQuery if you prefer)
@@ -252,7 +249,7 @@ function myGameEnd(e) {
   //e is gameResultsArray
   console.log(e);
   //reset the wheel with static function call
-  Spin2WinWheel.reset();
+  Easy Spin 2 WinWheel.reset();
 }
 
 function init() {
@@ -261,8 +258,8 @@ function init() {
     var jsonData = JSON.parse(response);
     //if you want to spin it using your own button, then create a reference and pass it in as spinTrigger
     //var mySpinBtn = document.querySelector('.spinBtn');
-    //create a new instance of Spin2Win Wheel and pass in the vars object
-    var myWheel = new Spin2WinWheel();
+    //create a new instance of Easy Spin 2 Win Wheel and pass in the vars object
+    var myWheel = new Easy Spin 2 WinWheel();
     
     //WITH your own button
     //myWheel.init({data:jsonData, onResult:myResult, onGameEnd:myGameEnd, onError:myError, spinTrigger:mySpinBtn});
@@ -280,16 +277,11 @@ init();
 
 ## Installation
 
-- Extract the ZIP to a folder _on a web server_. This folder will be your root. If you do not run this on a web server the JSON will not load and the Spin2Win Wheel will not work.
-- Ensure your JSON is sitting in the same domain - loading across domains is not allowed due to browser security.
-- Ensure the SVG tag is in the HTML page.
+- Unzip the ZIP file to a directory on a web server. This directory will serve as your root. Failure to run this on a web server will prevent the Easy Spin 2 Win Wheel from functioning properly as the JSON will not load.
+- Make sure your JSON file is located within the same domain. Loading files across domains is restricted by browser security measures.
+- Confirm that the SVG tag is included in the HTML page.
  
-##### You can purchase Spin2Win Wheel by Chris Gannon from CodeCanyon [here](http://codecanyon.net/item/spin2win-wheel-spin-it-2-win-it/16337656?ref=chrisgannon)
-
-##### FAQs can be found here [here](https://codecanyon.net/item/spin2win-wheel-spin-it-2-win-it/16337656/support)
-
-
 # Features Graphic
 
-![Spin2Win Wheel Features](https://0.s3.envato.com/files/188291245/Spin2Win-590-x-2625.png)
+![Easy Spin 2 Win Wheel Features](https://0.s3.envato.com/files/188291245/Easy Spin 2 Win-590-x-2625.png)
 
