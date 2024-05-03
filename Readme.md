@@ -1,3 +1,5 @@
+![Easy Spin 2 Win](https://i.ibb.co/68VJf5v/Screenshot-2024-05-03-213921.png)
+
 ## Tài liệu cho Easy Spin 2 Win Wheel bởi HideCM
 ### Xây dựng bằng Scalable Vector Graphics (SVG), Easy Spin 2 Win Wheel là một trò chơi vòng quay linh hoạt, có thể tùy chỉnh, phản ánh độ phân giải và kiểm soát kết quả.
 
