@@ -3,13 +3,8 @@
 
 Spin results, prizes, win/lose, number of spins, custom data and more can be controlled using JSON data. You can set the winning probabilty for each segment and customise the look and feel of Easy Spin 2 Win Wheel to bring it in line with your brand or color scheme - it even has an anti-cheat mechanism to prevent players placing the wheel on a chosen segment.
 
-##### You can purchase Easy Spin 2 Win Wheel by Chris Gannon from CodeCanyon [here](http://codecanyon.net/item/Easy Spin 2 Win-wheel-spin-it-2-win-it/16337656?ref=chrisgannon)
-
-
- 
 ### Features
 
-- Greensock version 3.x
 - Probability 
 - API for game progress, tracking and results
 - Spin destinations can be set to ensure a specific outcome
@@ -181,8 +176,6 @@ You can edit the peg graphic by locating the path with id `peg` in the HTML (ins
 
 ## JavaScript Libraries
 
-Easy Spin 2 Win Wheel is powered the GreenSock Animation Platform (GSAP). The following libraries are used:
-
 - TweenMax ([CDN](https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js))
 - Draggable ([CDN](https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/utils/Draggable.min.js))
 - ThrowPropsPlugin (Local version only /js/ThrowPropsPlugin.min.js)
@@ -280,8 +273,4 @@ init();
 - Unzip the ZIP file to a directory on a web server. This directory will serve as your root. Failure to run this on a web server will prevent the Easy Spin 2 Win Wheel from functioning properly as the JSON will not load.
 - Make sure your JSON file is located within the same domain. Loading files across domains is restricted by browser security measures.
 - Confirm that the SVG tag is included in the HTML page.
- 
-# Features Graphic
-
-![Easy Spin 2 Win Wheel Features](https://0.s3.envato.com/files/188291245/Easy Spin 2 Win-590-x-2625.png)
 
